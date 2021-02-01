@@ -15,7 +15,7 @@ spec:
     helm:
       parameters:
         - name: application_tag
-          value: 2.0.5-20210114-022420
+          value: 2.0.8c-20210201-220000
         - name: application_name
           value: 'mikes-spring-demo'
         - name: namespace
