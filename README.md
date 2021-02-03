@@ -14,3 +14,5 @@ The app uses [Spring Fox](http://springfox.github.io/springfox/) to generate an 
 Simple Rest service that shows version from the pom.xml.  Use this app for Tekton demo's
 
 ## Demo Tekton use case
+
+Configuration added under stage and qa branch to configure with Tekton pipelines
