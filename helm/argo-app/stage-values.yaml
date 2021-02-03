@@ -1,0 +1,12 @@
+# Default values for argo-app.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+environment: stage
+namespace: spring-rest-stage
+image_tag: foobar
+app_name: spring-rest-demo
+
+pipeline:
+  enabled: true
+  namespace: att-pipelines
