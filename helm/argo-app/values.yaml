@@ -4,7 +4,7 @@
 
 environment: stage
 namespace: spring-rest-stage
-image_tag: foobar
+image_tag: 2.0.8-new-20210204-185344
 app_name: spring-rest-demo
 
 pipeline:
