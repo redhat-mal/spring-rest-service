@@ -2,10 +2,10 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-environment: stage
+environment: qa
+namespace: spring-rest-qa
 image_tag: 2.1-alpha-20210204-194722
 app_name: spring-rest-demo
 
 pipeline:
-  enabled: "True"
-  namespace: att-pipelines
+  enabled: false
