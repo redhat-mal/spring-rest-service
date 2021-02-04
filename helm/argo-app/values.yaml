@@ -8,3 +8,4 @@ app_name: spring-rest-demo
 
 pipeline:
   enabled: false
+
