@@ -25,7 +25,7 @@ spec:
           value: main
 {{ if .Values.pipeline.enabled }}
         - name: pipeline.deploy
-          value: {{ .Values.pipeline.enabled }}
+          value: "True"
         #- name: namespace_qa
         #  value: {{ .Values.namespace_qa }}
         - name: pipeline.namespace

@@ -8,5 +8,5 @@ image_tag: foobar
 app_name: spring-rest-demo
 
 pipeline:
-  enabled: true
+  enabled: "True"
   namespace: att-pipelines
