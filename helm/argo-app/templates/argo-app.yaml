@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mikes-spring-demo-{{ .Values.environment }}
+  name: {{ .Values.application_name }}-{{ .Values.environment }}
   namespace: cicd-tools
 spec:
   destination:
@@ -15,10 +15,10 @@ spec:
       parameters:
         - name: application_tag
           value: {{ .Values.image_tag }}
-        - name: namespace
-          value: {{ .Values.namespace }}
         - name: application_name
           value: {{ .Values.app_name }}
+        - name: environment
+          value: {{ .Values.environment }}
         - name: pipeline.source_repo
           value: https://github.com/redhat-mal/spring-rest-service.git
         - name: pipeline.source_ref
@@ -26,8 +26,6 @@ spec:
 {{ if .Values.pipeline.enabled }}
         - name: pipeline.deploy
           value: "True"
-        #- name: namespace_qa
-        #  value: {{ .Values.namespace_qa }}
         - name: pipeline.namespace
           value: {{ .Values.pipeline.namespace }}
         - name: pipeline.service_account
