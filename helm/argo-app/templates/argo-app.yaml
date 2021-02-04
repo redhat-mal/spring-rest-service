@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Values.application_name }}-{{ .Values.environment }}
+  name: {{ .Values.app_name }}-{{ .Values.environment }}
   namespace: cicd-tools
 spec:
   destination:
