@@ -3,7 +3,8 @@ echo "Installing Pipeline"
 oc project cicd-tools
 
 git checkout main
-helm upgrade --install spring-demo-stage ./helm/argo-app/ --values ./helm/argo-app/stage-values.yaml --set googlechat_secret=foobar
+helm upgrade --install spring-rest-demo-stage ./helm/argo-app/ --values --set googlechat_secret=foobar
 
-#git checkout qa
-#oc apply -f .openshift/spring-boot-demo.yaml
+git checkout qa
+helm upgrade --install spring-rest-demo-qa ./helm/argo-app/  --set googlechat_secret=foobar
+
