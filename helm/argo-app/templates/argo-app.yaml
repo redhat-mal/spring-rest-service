@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mikes-spring-demo-{{ .Values.environment }}
+  namespace: cicd-tools
+spec:
+  destination:
+    namespace: att-pipelines
+    server: 'https://kubernetes.default.svc'
+  project: default
+  syncPolicy:
+    automated: {}  
+  source:
+    helm:
+      parameters:
+        - name: application_tag
+          value: {{ .Values.image_tag }}
+        - name: namespace
+          value: {{ .Values.namespace }}
+        - name: application_name
+          value: {{ .Values.app_name }}
+        - name: pipeline.source_repo
+          value: https://github.com/redhat-mal/spring-rest-service.git
+        - name: pipeline.source_ref
+          value: main
+{{ if .Values.pipeline.enabled }}
+        - name: pipeline.deploy
+          value: "True"
+        #- name: namespace_qa
+        #  value: {{ .Values.namespace_qa }}
+        - name: pipeline.namespace
+          value: {{ .Values.pipeline.namespace }}
+        - name: pipeline.service_account
+          value: pipelines-sa
+        - name: pipeline.googlechat_secret
+          value: {{ .Values.googlechat_secret }}
+{{- end }}
+    path: helm/app-deployment
+    repoURL: 'https://github.com/redhat-mal/ocp-labs-manager.git'
+    targetRevision: HEAD
