@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 environment: qa
-image_tag: 2.7-alpha-20210205-163804
+image_tag: 2.7-alpha-20210205-181652
 app_name: spring-rest-demo
 
 pipeline:
