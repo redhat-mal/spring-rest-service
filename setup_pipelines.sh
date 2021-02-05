@@ -8,3 +8,4 @@ helm upgrade --install spring-rest-demo-stage ./helm/argo-app/ --set googlechat_
 git checkout qa
 helm upgrade --install spring-rest-demo-qa ./helm/argo-app/  --set googlechat_secret=foobar
 
+git checkout main
