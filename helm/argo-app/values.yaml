@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 environment: stage
-image_tag: 2.10-alpha-20210205-192745
+image_tag: 2.10-beta-20210302-205940
 app_name: spring-rest-demo
 googlechat_secret: mikes-chat-secret
 pipeline:
