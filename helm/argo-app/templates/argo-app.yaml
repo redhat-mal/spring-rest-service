@@ -24,7 +24,7 @@ spec:
         - name: pipeline.source_ref
           value: main
         - name: serverless
-          value: {{ .Values.serverless }}
+          value: "{{ .Values.serverless }}"
 {{ if .Values.pipeline.enabled }}
         - name: pipeline.deploy
           value: "True"
